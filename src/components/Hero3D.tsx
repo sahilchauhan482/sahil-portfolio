@@ -1268,11 +1268,13 @@ function CleanSpaceScene() {
     m2.delay = 0;
   };
 
-  const triggerExplosion = (x: number, y: number, z: number, customColor?: string) => {
+  const triggerExplosion = (x: number, y: number, z: number, customColor?: string, playAudio = true) => {
     const s = sparklesRef.current;
     const count = customColor ? 80 : 130;
 
-    triggerCollisionSound();
+    if (playAudio) {
+      triggerCollisionSound();
+    }
 
     // Vibrant colors for custom explosions
     const explosionColors = ['#ff2a6d', '#05d9e8', '#00fe9b', '#f5a623', '#b967ff', '#ff3dfd', '#fffa37', '#ffffff'];
@@ -1462,9 +1464,9 @@ function CleanSpaceScene() {
       </group>
 
       {/* 7. Occasional Shooting Stars (Toota Tara) */}
-      <ShootingStar id={1} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={triggerExplosion} />
-      <ShootingStar id={2} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={triggerExplosion} />
-      <ShootingStar id={3} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={triggerExplosion} />
+      <ShootingStar id={1} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false)} />
+      <ShootingStar id={2} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false)} />
+      <ShootingStar id={3} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false)} />
 
       {/* 6. Sparkles points */}
       <points ref={sparklesPointsRef}>
@@ -1497,12 +1499,14 @@ export default function Hero3D() {
   const { designId, theme } = useTheme();
   const { three } = theme;
 
-  // Ambient space hum — plays only for cosmic theme, stops on unmount
+  // Ambient space hum — disabled as requested to keep the site silent until interaction
+  /*
   useEffect(() => {
     if (designId !== 'cosmic') return;
     const stopHum = startSpaceHum(0.006);
     return () => stopHum();
   }, [designId]);
+  */
 
   return (
     <Canvas
