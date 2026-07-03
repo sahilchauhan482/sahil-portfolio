@@ -1027,17 +1027,17 @@ function ShootingStar({
     const speed = 0.015 + Math.random() * 0.012; // slow, elegant moving speed
 
     if (side === 0) { // left
-      s.x = -8.5; s.y = (Math.random() - 0.5) * 5;
-      s.vx = speed; s.vy = (Math.random() - 0.5) * 0.04;
+      s.x = -8.5; s.y = (Math.random() - 0.5) * 1.5; // close to planet plane
+      s.vx = speed; s.vy = (Math.random() - 0.5) * 0.01;
     } else if (side === 1) { // right
-      s.x = 8.5; s.y = (Math.random() - 0.5) * 5;
-      s.vx = -speed; s.vy = (Math.random() - 0.5) * 0.04;
+      s.x = 8.5; s.y = (Math.random() - 0.5) * 1.5; // close to planet plane
+      s.vx = -speed; s.vy = (Math.random() - 0.5) * 0.01;
     } else if (side === 2) { // top
-      s.y = 4.8; s.x = (Math.random() - 0.5) * 9;
-      s.vy = -speed; s.vx = (Math.random() - 0.5) * 0.04;
+      s.y = 4.8; s.x = (Math.random() - 0.5) * 6.5;
+      s.vy = -speed; s.vx = (Math.random() - 0.5) * 0.015;
     } else { // bottom
-      s.y = -4.8; s.x = (Math.random() - 0.5) * 9;
-      s.vy = speed; s.vx = (Math.random() - 0.5) * 0.04;
+      s.y = -4.8; s.x = (Math.random() - 0.5) * 6.5;
+      s.vy = speed; s.vx = (Math.random() - 0.5) * 0.015;
     }
     s.z = -1.0 - Math.random() * 2.0;
     s.vz = (Math.random() - 0.5) * 0.01;
@@ -1075,7 +1075,7 @@ function ShootingStar({
     // Check bounds
     if (Math.abs(s.x) > 9.2 || Math.abs(s.y) > 5.5 || Math.abs(s.z) > 10) {
       s.active = false;
-      s.cooldown = 3.0 + Math.random() * 5.0; // reappear after 3-8s
+      s.cooldown = 0.8 + Math.random() * 2.0; // reappear after 0.8-2.8s
       return;
     }
 
@@ -1128,11 +1128,12 @@ function ShootingStar({
       const dx = s.x - px;
       const dy = s.y - py;
       const dz = s.z - pz;
-      const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      
+      const distXZ = Math.sqrt(dx * dx + dz * dz);
 
-      if (dist < planet.radius + s.radius + 0.05) {
+      if (distXZ < planet.radius + s.radius + 0.12 && Math.abs(dy) < 0.38) {
         s.active = false;
-        s.cooldown = 3.0 + Math.random() * 5.0;
+        s.cooldown = 1.0 + Math.random() * 2.0;
         onExplode(s.x, s.y, s.z, s.color);
         return;
       }
@@ -1146,11 +1147,11 @@ function ShootingStar({
         const dx = s.x - droid.x;
         const dy = s.y - droid.y;
         const dz = s.z - droid.z;
-        const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        const distXZ = Math.sqrt(dx * dx + dz * dz);
 
-        if (dist < 0.22) { // bounding box of droid
+        if (distXZ < 0.32 && Math.abs(dy) < 0.38) { // bounding box of droid with vertical tolerance
           s.active = false;
-          s.cooldown = 4.0 + Math.random() * 6.0;
+          s.cooldown = 1.5 + Math.random() * 2.5;
           onExplode(s.x, s.y, s.z, s.color);
           return;
         }
