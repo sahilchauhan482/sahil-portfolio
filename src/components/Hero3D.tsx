@@ -466,7 +466,7 @@ function OrbitLine({ radius }: { radius: number }) {
   const lineMaterial = useMemo(() => {
     return new THREE.LineBasicMaterial({
       color: '#6688cc',
-      opacity: 0.15,
+      opacity: 0.22,
       transparent: true
     });
   }, []);
