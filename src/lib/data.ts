@@ -110,46 +110,84 @@ export const experience = [
 ];
 
 // =====================================================================
-//  PROJECTS — YE PLACEHOLDERS HAIN. Apne real projects se replace karo.
-//  Har project ke liye: title, description, tech, links, aur optional image.
-//  Image: /public/projects/ me daalo aur path yahan do (e.g. '/projects/app.jpg')
+//  PROJECTS — Automatically updated with real projects from D: drive
 // =====================================================================
 export const projects = [
   {
-    title: 'Enterprise Web Platform',
+    title: 'Daksh Properties',
     description:
-      'A full-stack business platform built with Angular and .NET using CQRS. Handles complex workflows with clean separation of read and write models. (Placeholder — apne real project se badlo.)',
-    tech: ['Angular', '.NET', 'CQRS', 'SQL Server'],
-    image: '', // e.g. '/projects/platform.jpg'
-    live: '#',
-    github: '#',
-    featured: true,
-  },
-  {
-    title: 'Logistics Ops Dashboard',
-    description:
-      'Real-time dashboard concept for last-mile delivery tracking — inspired by my operations background. Live status, route load, and team performance. (Placeholder.)',
-    tech: ['Angular', 'TypeScript', 'REST API', 'Charts'],
+      'A premium real estate portal featuring high-performance property showcases, smooth scrolling layouts, and structured headless content management.',
+    tech: ['Astro', 'Tailwind CSS v4', 'GSAP', 'Lenis', 'Sanity CMS'],
     image: '',
     live: '#',
     github: '#',
     featured: true,
   },
   {
-    title: 'Task & Workflow Manager',
+    title: 'SKUVelocity',
     description:
-      'A clean task management app with role-based access and activity streams. Demonstrates end-to-end full-stack delivery. (Placeholder.)',
-    tech: ['.NET', 'Angular', 'Entity Framework'],
+      'An enterprise purchase order management and tracking platform. Handles high-throughput imports, queues, background processing workers, and logistics control.',
+    tech: ['.NET / C#', 'Web APIs', 'Repository Pattern', 'SQL Server', 'Unit Testing'],
+    image: '',
+    live: '#',
+    github: '#',
+    featured: true,
+  },
+  {
+    title: 'Estyro Platform',
+    description:
+      'An enterprise business operations engine with a clean architecture C# backend, a React admin console dashboard, and a Flutter cross-platform mobile client.',
+    tech: ['.NET', 'React', 'Flutter', 'SQL Server', 'JWT Authentication'],
+    image: '',
+    live: '#',
+    github: '#',
+    featured: true,
+  },
+  {
+    title: 'Lakhdata Computer Care (LCC)',
+    description:
+      'A modern IT services and hardware repair portal featuring static page delivery, rich interactive animations, and a structured service booking system.',
+    tech: ['Astro', 'React', 'GSAP', 'Lenis', 'Sanity CMS', 'TypeScript'],
     image: '',
     live: '#',
     github: '#',
     featured: false,
   },
   {
-    title: 'This Portfolio',
+    title: 'Voucher Management App',
     description:
-      'A 3D animated portfolio built with Next.js, React-Three-Fiber and Framer Motion. Server-rendered and SEO-optimised.',
-    tech: ['Next.js', 'React Three Fiber', 'Framer Motion', 'Tailwind'],
+      'A platform for generating, validating, and managing secure transaction vouchers, featuring ClosedXML data reports and a React dashboard.',
+    tech: ['.NET', 'React', 'Vite', 'TypeScript', 'Axios', 'ClosedXML', 'SQL Server'],
+    image: '',
+    live: '#',
+    github: '#',
+    featured: false,
+  },
+  {
+    title: 'Survey Management System',
+    description:
+      'A dynamic survey builder and responder portal. Supports complex forms, Redux State, webcam verification, and custom Express MongoDB APIs.',
+    tech: ['React', 'Redux Toolkit', 'Material UI (MUI)', 'Node.js', 'Express', 'MongoDB'],
+    image: '',
+    live: '#',
+    github: '#',
+    featured: false,
+  },
+  {
+    title: 'Reelyx Web Portal',
+    description:
+      'A next-generation media sharing and content streaming frontend, utilizing React 19, React Query for efficient data fetching, and Sentry for error tracking.',
+    tech: ['React 19', 'TanStack Query', 'Vite', 'TypeScript', 'Sentry', 'React Router'],
+    image: '',
+    live: '#',
+    github: '#',
+    featured: false,
+  },
+  {
+    title: 'This Interactive 3D Portfolio',
+    description:
+      'A premium 3D interactive portfolio featuring high-speed static page delivery, custom particle systems, collision detection, and performance tuning.',
+    tech: ['Astro', 'React', 'React Three Fiber', 'Framer Motion', 'Tailwind'],
     image: '',
     live: '#',
     github: '#',
