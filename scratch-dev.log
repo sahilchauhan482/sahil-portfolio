@@ -1,0 +1,373 @@
+
+> sahil-chauhan-portfolio@1.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1900ms
+ ○ Compiling / ...
+ ✓ Compiled / in 11.3s (2451 modules)
+ GET / 200 in 71ms
+ ⚠ ./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'defaultThemeId' is not exported from '@/lib/themes' (imported as 'defaultThemeId').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'defaultThemeId' is not exported from '@/lib/themes' (imported as 'defaultThemeId').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./components/ThemeProvider.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./components/ThemeProvider.tsx
+
+./app/layout.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'defaultThemeId' is not exported from '@/lib/themes' (imported as 'defaultThemeId').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'defaultThemeId' is not exported from '@/lib/themes' (imported as 'defaultThemeId').
+
+Import trace for requested module:
+./app/layout.tsx
+ ⚠ ./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./app/layout.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'defaultThemeId' is not exported from '@/lib/themes' (imported as 'defaultThemeId').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'STORAGE_KEY' is not exported from '@/components/ThemeProvider' (imported as 'STORAGE_KEY').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'getTheme' is not exported from '@/lib/themes' (imported as 'getTheme').
+
+Import trace for requested module:
+./app/layout.tsx
+
+./app/layout.tsx
+Attempted import error: 'defaultThemeId' is not exported from '@/lib/themes' (imported as 'defaultThemeId').
+
+Import trace for requested module:
+./app/layout.tsx
+ ⚠ ./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+
+./components/DesignSwitcher.tsx
+Attempted import error: 'themes' is not exported from '@/lib/themes' (imported as 'themes').
+
+Import trace for requested module:
+./components/DesignSwitcher.tsx
+ ✓ Compiled in 523ms (2388 modules)
+ GET / 200 in 227ms
+ ✓ Compiled in 2.2s (2388 modules)
+ ✓ Compiled in 952ms (2388 modules)
+ ✓ Compiled in 958ms (2389 modules)
+ ✓ Compiled in 823ms (2391 modules)
+ ✓ Compiled in 551ms (2391 modules)
+ GET / 200 in 201ms
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+ ⨯ unhandledRejection: Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+ ⨯ unhandledRejection: Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+ ✓ Compiled in 456ms (216 modules)
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+ ⨯ unhandledRejection: Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+ ⨯ unhandledRejection: Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+ ✓ Compiled in 73ms (216 modules)
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}
+Error: ENOENT: no such file or directory, scandir 'D:\Sahil-portfolio\app'
+    at async Object.readdir (node:internal/fs/promises:956:18)
+    at async D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:39:29
+    at async Promise.all (index 0)
+    at async recursiveReadDir (D:\Sahil-portfolio\node_modules\next\dist\lib\recursive-readdir.js:32:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:71:25
+    at async Promise.all (index 0)
+    at async BatchedFileReader.load (D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:67:25)
+    at async D:\Sahil-portfolio\node_modules\next\dist\server\future\route-matcher-providers\dev\helpers\file-reader\batched-file-reader.js:41:26 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'scandir',
+  path: 'D:\\Sahil-portfolio\\app'
+}

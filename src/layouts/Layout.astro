@@ -1,0 +1,83 @@
+---
+import { generateThemeCss, defaultDesignId, defaultPaletteId, getDesign, getPalette, designs, palettes } from '../lib/themes';
+import { DESIGN_STORAGE_KEY, PALETTE_STORAGE_KEY } from '../components/ThemeProvider';
+import '../styles/globals.css';
+
+const defDesign = getDesign(defaultDesignId);
+const defPalette = getPalette(defaultPaletteId);
+
+const designLookup = Object.fromEntries(
+  designs.map((d) => [d.id, [d.atmosphere, d.surface]]),
+);
+const paletteLookup = Object.fromEntries(
+  palettes.map((p) => [p.id, p.mode]),
+);
+
+const noFlashScript = `(function(){try{
+  var dId = localStorage.getItem('${DESIGN_STORAGE_KEY}') || '${defaultDesignId}';
+  var pId = localStorage.getItem('${PALETTE_STORAGE_KEY}') || '${defaultPaletteId}';
+  var dMap = ${JSON.stringify(designLookup)};
+  var pMap = ${JSON.stringify(paletteLookup)};
+  var e = document.documentElement;
+  
+  var dData = dMap[dId] || ['${defDesign.atmosphere}', '${defDesign.surface}'];
+  var pMode = pMap[pId] || '${defPalette.mode}';
+  
+  e.setAttribute('data-design', dId);
+  e.setAttribute('data-palette', pId);
+  e.setAttribute('data-atmosphere', dData[0]);
+  e.setAttribute('data-surface', dData[1]);
+  e.style.colorScheme = pMode;
+}catch(x){}})();`;
+
+const themeCss = generateThemeCss();
+const { title = "Sahil Chauhan — Full-Stack Developer" } = Astro.props;
+---
+
+<!doctype html>
+<html
+  lang="en"
+  data-design={defDesign.id}
+  data-palette={defPalette.id}
+  data-atmosphere={defDesign.atmosphere}
+  data-surface={defDesign.surface}
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    {/* Load Google Fonts */}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+    {/* Injected Theme and Layout Styles */}
+    <style is:inline set:html={themeCss} />
+
+    {/* Server-Side no-flash script */}
+    <script is:inline set:html={noFlashScript} />
+  </head>
+  <body class="font-sans">
+    <div class="bg-atmosphere" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <slot />
+
+    {/* Global spotlight mouse-glow tracker for soft-glow elements */}
+    <script is:inline>
+      document.addEventListener('mousemove', function(e) {
+        var cards = document.querySelectorAll('.glass');
+        for (var i = 0; i < cards.length; i++) {
+          var card = cards[i];
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', x + 'px');
+          card.style.setProperty('--mouse-y', y + 'px');
+        }
+      });
+    </script>
+  </body>
+</html>
