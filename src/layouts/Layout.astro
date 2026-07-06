@@ -1,6 +1,7 @@
 ---
 import { generateThemeCss, defaultDesignId, defaultPaletteId, getDesign, getPalette, designs, palettes } from '../lib/themes';
 import { DESIGN_STORAGE_KEY, PALETTE_STORAGE_KEY } from '../components/ThemeProvider';
+import { site } from '../lib/data';
 import '../styles/globals.css';
 
 const defDesign = getDesign(defaultDesignId);
@@ -48,6 +49,51 @@ const { title = "Sahil Chauhan — Full-Stack Developer" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    {/* SEO Meta Tags */}
+    <meta name="description" content={`${site.name} — ${site.role}. ${site.tagline}`} />
+    <meta name="keywords" content="Sahil Chauhan, Full-Stack Developer, .NET Developer, Angular Developer, Software Engineer, Portfolio, Mohali Developer, Chandigarh Developer, sahilchauhan-coder" />
+    <meta name="author" content={site.name} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={site.url} />
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={`${site.name} — ${site.role}. ${site.tagline}`} />
+    <meta property="og:image" content={`${site.url}/profile.jpg`} />
+
+    {/* Twitter */}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={site.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={`${site.name} — ${site.role}. ${site.tagline}`} />
+    <meta property="twitter:image" content={`${site.url}/profile.jpg`} />
+
+    {/* Google Site Verification (Search Console) */}
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
+
+    {/* Structured Data (JSON-LD) */}
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": site.name,
+      "jobTitle": site.role,
+      "url": site.url,
+      "image": `${site.url}/profile.jpg`,
+      "sameAs": [
+        "https://www.linkedin.com/in/sahilchauhan-2107a9169",
+        "https://github.com/sahilchauhan482"
+      ],
+      "description": `${site.name} is a ${site.role}. ${site.tagline}`,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "India"
+      }
+    })} />
 
     {/* Load Google Fonts */}
     <link rel="preconnect" href="https://fonts.googleapis.com">

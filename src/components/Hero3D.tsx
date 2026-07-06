@@ -10,7 +10,7 @@ import { playScrollTick, startSpaceHum } from '../lib/audio';
 import { createPlanetTexture, createSaturnRingTexture } from '../lib/planetTextures';
 import type { Theme } from '@/lib/themes';
 
-const MAX_SPARKLES = 500;
+const MAX_SPARKLES = 800;
 
 // Reusable temp vectors for per-frame meteor orientation (avoids GC churn).
 const _up = new THREE.Vector3(0, 1, 0);
@@ -708,7 +708,7 @@ function FlyingDroid({
       const now = state.clock.getElapsedTime();
       if (now - lastBlip.current > 2.0) {
         lastBlip.current = now;
-        triggerCollisionSound();
+        // Sound removed — was annoying auto-blip every 2s on tractor beam
       }
     }
 
@@ -1024,7 +1024,7 @@ function ShootingStar({
   const launch = () => {
     const s = state.current;
     const side = Math.floor(Math.random() * 4);
-    const speed = 0.015 + Math.random() * 0.012; // slow, elegant moving speed
+	    const speed = 0.015 + Math.random() * 0.012; // slow, elegant moving speed
 
     if (side === 0) { // left
       s.x = -8.5; s.y = (Math.random() - 0.5) * 1.5; // close to planet plane
@@ -1039,8 +1039,8 @@ function ShootingStar({
       s.y = -4.8; s.x = (Math.random() - 0.5) * 6.5;
       s.vy = speed; s.vx = (Math.random() - 0.5) * 0.015;
     }
-    s.z = -1.0 - Math.random() * 2.0;
-    s.vz = (Math.random() - 0.5) * 0.01;
+	    s.z = (Math.random() - 0.5) * 1.5; // near planet plane (z ≈ 0) for visible collisions
+	    s.vz = (Math.random() - 0.5) * 0.04;
 
     // Vibrant colors
     const colors = ['#ff2a6d', '#05d9e8', '#00fe9b', '#f5a623', '#b967ff', '#ff3dfd', '#fffa37'];
@@ -1271,7 +1271,7 @@ function CleanSpaceScene() {
 
   const triggerExplosion = (x: number, y: number, z: number, customColor?: string, playAudio = true) => {
     const s = sparklesRef.current;
-    const count = customColor ? 80 : 130;
+	    const count = customColor ? 120 : 200;
 
     if (playAudio) {
       triggerCollisionSound();
@@ -1296,7 +1296,7 @@ function CleanSpaceScene() {
       s.data[idx].vz = Math.cos(phi) * speed;
 
       s.data[idx].life = 1.0;
-      s.data[idx].decay = customColor ? (0.02 + Math.random() * 0.02) : (0.015 + Math.random() * 0.015);
+	      s.data[idx].decay = customColor ? (0.008 + Math.random() * 0.012) : (0.006 + Math.random() * 0.008);
 
       let c: THREE.Color;
       if (customColor) {
@@ -1371,7 +1371,7 @@ function CleanSpaceScene() {
       const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
 
       if (dist < 0.35) {
-        triggerExplosion((m1.x + m2.x) / 2, (m1.y + m2.y) / 2, (m1.z + m2.z) / 2);
+        triggerExplosion((m1.x + m2.x) / 2, (m1.y + m2.y) / 2, (m1.z + m2.z) / 2, undefined, false);
         m1.active = false;
         m2.active = false;
         m1.delay = 0;
@@ -1446,12 +1446,12 @@ function CleanSpaceScene() {
       ))}
 
       {/* 4. Flying Meteors/Asteroids (Ulka Pind) — glowing heads + fiery tails */}
-      {/* <group ref={m1Ref}>
+      <group ref={m1Ref}>
         <Meteor headColor={three.color || '#ff9d5c'} tailColor={three.color || '#ff5c7f'} />
       </group>
       <group ref={m2Ref}>
         <Meteor headColor={three.emissive || '#8fd3ff'} tailColor={three.emissive || '#00e5ff'} />
-      </group> */}
+      </group>
 
       {/* 5. Interactive Flying Droids */}
       <FlyingDroid id={1} color="#39ff14" onExplode={triggerExplosion} pose="dancing" mouseWorld={mouseWorld} onUpdatePosition={(x, y, z, active) => updateDroidPosition(1, x, y, z, active)} />
@@ -1465,9 +1465,9 @@ function CleanSpaceScene() {
       </group>
 
       {/* 7. Occasional Shooting Stars (Toota Tara) */}
-      <ShootingStar id={1} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false)} />
-      <ShootingStar id={2} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false)} />
-      <ShootingStar id={3} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false)} />
+      <ShootingStar id={1} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false, false)} />
+      <ShootingStar id={2} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false, false)} />
+      <ShootingStar id={3} planetColliders={displayPlanets} droidColliders={droidPositions} onExplode={(x, y, z, color) => triggerExplosion(x, y, z, color, false, false)} />
 
       {/* 6. Sparkles points */}
       <points ref={sparklesPointsRef}>

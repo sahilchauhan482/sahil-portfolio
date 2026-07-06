@@ -6,7 +6,7 @@
 
 export const site = {
   // Deploy hone ke baad apna final URL yahan daalna (SEO ke liye zaroori)
-  url: 'https://sahilchauhan.vercel.app',
+  url: 'https://sahilchauhan-coder.vercel.app',
   name: 'Sahil Chauhan',
   role: 'Full-Stack Developer',
   // Hero me bade text ke neeche dikhne wali line
@@ -22,8 +22,8 @@ export const site = {
 
 export const socials = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sahilchauhan-2107a9169', handle: '@sahilchauhan' },
-  // GitHub username mila toh yahan sahi kar dena:
-  { label: 'GitHub', href: 'https://github.com/', handle: '@your-github' },
+  // GitHub username:
+  { label: 'GitHub', href: 'https://github.com/sahilchauhan482', handle: '@sahilchauhan482' },
   { label: 'Email', href: 'mailto:sahilchauhan482@gmail.com', handle: 'sahilchauhan482@gmail.com' },
 ];
 
