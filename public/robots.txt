@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sahilchauhan-coder.vercel.app/sitemap.xml
+Sitemap: https://sahiltech.in/sitemap.xml

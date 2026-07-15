@@ -6,7 +6,7 @@
 
 export const site = {
   // Deploy hone ke baad apna final URL yahan daalna (SEO ke liye zaroori)
-  url: 'https://sahilchauhan-coder.vercel.app',
+  url: 'https://sahiltech.in',
   name: 'Sahil Chauhan',
   role: 'Full-Stack Developer',
   // Hero me bade text ke neeche dikhne wali line
