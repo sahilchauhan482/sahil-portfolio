@@ -1,34 +1,101 @@
 import { site, socials } from '@/lib/data';
 import Reveal from './Reveal';
 
+const SOCIAL_STYLES: Record<string, {
+  color: string;
+  borderColor: string;
+  bgColor: string;
+  hoverBorderColor: string;
+  hoverBgColor: string;
+  glowColor: string;
+}> = {
+  LinkedIn: {
+    color: '#0A66C2',
+    borderColor: 'rgba(10, 102, 194, 0.25)',
+    bgColor: 'rgba(10, 102, 194, 0.05)',
+    hoverBorderColor: '#0A66C2',
+    hoverBgColor: 'rgba(10, 102, 194, 0.15)',
+    glowColor: 'rgba(10, 102, 194, 0.4)',
+  },
+  GitHub: {
+    color: '#F0F6FC',
+    borderColor: 'rgba(240, 246, 252, 0.25)',
+    bgColor: 'rgba(240, 246, 252, 0.05)',
+    hoverBorderColor: '#F0F6FC',
+    hoverBgColor: 'rgba(240, 246, 252, 0.15)',
+    glowColor: 'rgba(240, 246, 252, 0.4)',
+  },
+  Email: {
+    color: '#EA4335',
+    borderColor: 'rgba(234, 67, 53, 0.25)',
+    bgColor: 'rgba(234, 67, 53, 0.05)',
+    hoverBorderColor: '#EA4335',
+    hoverBgColor: 'rgba(234, 67, 53, 0.15)',
+    glowColor: 'rgba(234, 67, 53, 0.4)',
+  },
+  Instagram: {
+    color: '#E1306C',
+    borderColor: 'rgba(225, 48, 108, 0.25)',
+    bgColor: 'rgba(225, 48, 108, 0.05)',
+    hoverBorderColor: '#E1306C',
+    hoverBgColor: 'rgba(225, 48, 108, 0.15)',
+    glowColor: 'rgba(225, 48, 108, 0.4)',
+  },
+  Facebook: {
+    color: '#1877F2',
+    borderColor: 'rgba(24, 119, 242, 0.25)',
+    bgColor: 'rgba(24, 119, 242, 0.05)',
+    hoverBorderColor: '#1877F2',
+    hoverBgColor: 'rgba(24, 119, 242, 0.15)',
+    glowColor: 'rgba(24, 119, 242, 0.4)',
+  },
+  WhatsApp: {
+    color: '#25D366',
+    borderColor: 'rgba(37, 211, 102, 0.25)',
+    bgColor: 'rgba(37, 211, 102, 0.05)',
+    hoverBorderColor: '#25D366',
+    hoverBgColor: 'rgba(37, 211, 102, 0.15)',
+    glowColor: 'rgba(37, 211, 102, 0.4)',
+  },
+};
+
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   LinkedIn: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect x="2" y="9" width="4" height="12" />
       <circle cx="4" cy="4" r="2" />
     </svg>
   ),
   GitHub: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
     </svg>
   ),
   Email: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
       <polyline points="22,6 12,13 2,6" />
     </svg>
   ),
   Instagram: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+      <defs>
+        <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#fdf497" />
+          <stop offset="15%" stopColor="#fdf497" />
+          <stop offset="45%" stopColor="#fd5949" />
+          <stop offset="65%" stopColor="#d6249f" />
+          <stop offset="90%" stopColor="#285AEB" />
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#instagram-gradient)" strokeWidth="2.2" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="url(#instagram-gradient)" strokeWidth="2.2" />
+      <circle cx="17.5" cy="6.5" r="0.5" fill="url(#instagram-gradient)" />
     </svg>
   ),
   Facebook: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
   ),
@@ -49,6 +116,21 @@ export default function Contact() {
             className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-accent-cyan/20 blur-[100px]"
             aria-hidden
           />
+
+          <style>{`
+            .social-icon-btn {
+              color: var(--brand-color);
+              border-color: var(--brand-border);
+              background-color: var(--brand-bg);
+              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .social-icon-btn:hover {
+              border-color: var(--brand-hover-border);
+              background-color: var(--brand-hover-bg);
+              transform: translateY(-3px) scale(1.1);
+              box-shadow: 0 0 20px var(--brand-glow);
+            }
+          `}</style>
 
           <p className="mb-3 font-mono text-sm uppercase tracking-[0.2em] text-accent-cyan">
             Contact
@@ -80,20 +162,40 @@ export default function Contact() {
           </div>
 
           <ul className="mt-10 flex flex-wrap items-center justify-center gap-5">
-            {socials.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target={s.label === 'Email' ? undefined : '_blank'}
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-ink-muted transition-all duration-300 hover:scale-110 hover:border-accent-cyan/50 hover:bg-accent-cyan/10 hover:text-accent-cyan"
-                  title={s.label}
-                  aria-label={s.label}
-                >
-                  {SOCIAL_ICONS[s.label] || <span>{s.label}</span>}
-                </a>
-              </li>
-            ))}
+            {socials.map((s) => {
+              const cfg = SOCIAL_STYLES[s.label] || {
+                color: '#fff',
+                borderColor: 'rgba(255,255,255,0.1)',
+                bgColor: 'rgba(255,255,255,0.03)',
+                hoverBorderColor: '#fff',
+                hoverBgColor: 'rgba(255,255,255,0.1)',
+                glowColor: 'rgba(255,255,255,0.2)',
+              };
+              const style = {
+                '--brand-color': cfg.color,
+                '--brand-border': cfg.borderColor,
+                '--brand-bg': cfg.bgColor,
+                '--brand-hover-border': cfg.hoverBorderColor,
+                '--brand-hover-bg': cfg.hoverBgColor,
+                '--brand-glow': cfg.glowColor,
+              } as React.CSSProperties;
+
+              return (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target={s.label === 'Email' ? undefined : '_blank'}
+                    rel="noopener noreferrer"
+                    className="flex h-12 w-12 items-center justify-center rounded-full border social-icon-btn"
+                    title={s.label}
+                    aria-label={s.label}
+                    style={style}
+                  >
+                    {SOCIAL_ICONS[s.label] || <span>{s.label}</span>}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </Reveal>
