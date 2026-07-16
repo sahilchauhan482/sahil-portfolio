@@ -139,7 +139,7 @@ export const projects = [
       'An enterprise business operations engine with a clean architecture C# backend, a React admin console dashboard, and a Flutter cross-platform mobile client.',
     tech: ['.NET', 'React', 'Flutter', 'SQL Server', 'JWT Authentication'],
     image: '',
-    live: '#',
+    live: 'https://estyro.com/',
     github: '#',
     featured: true,
   },
