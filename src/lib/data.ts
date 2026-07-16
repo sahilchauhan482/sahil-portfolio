@@ -21,10 +21,11 @@ export const site = {
 };
 
 export const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sahilchauhan-2107a9169', handle: '@sahilchauhan' },
-  // GitHub username:
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sahil-chauhan-2107a9169/', handle: '@sahil-chauhan' },
   { label: 'GitHub', href: 'https://github.com/sahilchauhan482', handle: '@sahilchauhan482' },
   { label: 'Email', href: 'mailto:sahilchauhan482@gmail.com', handle: 'sahilchauhan482@gmail.com' },
+  { label: 'Instagram', href: 'https://www.instagram.com/sahil_chauhan_1995/', handle: '@sahil_chauhan_1995' },
+  { label: 'Facebook', href: 'https://www.facebook.com/sahil.rana.77770194/about', handle: '@sahil.rana.77770194' },
 ];
 
 // Hero ke neeche chalne wale stats (badal sakte ho)
