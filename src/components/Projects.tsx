@@ -36,8 +36,7 @@ export default function Projects() {
           Projects
         </h2>
         <p className="mt-3 max-w-lg text-ink-muted">
-          A few things I&apos;ve built. Each one is a placeholder for now — swap in your
-          real projects in <code className="text-accent-cyan">lib/data.ts</code>.
+          A showcase of the systems and applications I have engineered, ranging from enterprise dashboards to interactive 3D web portals.
         </p>
       </Reveal>
 
@@ -57,11 +56,11 @@ export default function Projects() {
               />
 
               {p.image ? (
-                <div className="mb-5 overflow-hidden rounded-xl aspect-video w-full">
+                <div className="mb-5 overflow-hidden rounded-xl aspect-video w-full bg-[#0a0a0f] border border-white/5 flex items-center justify-center relative">
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
               ) : (
