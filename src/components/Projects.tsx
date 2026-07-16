@@ -47,9 +47,9 @@ export default function Projects() {
             key={p.title}
             as="article"
             delay={0.06 * i}
-            className={p.featured ? 'md:col-span-1' : 'md:col-span-1'}
+            className={`${p.featured ? 'md:col-span-1' : 'md:col-span-1'} group`}
           >
-            <div className="glass group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5">
+            <div className="glass relative flex h-full flex-col overflow-hidden rounded-3xl p-7 transition-all duration-300 group-hover:-translate-y-1.5">
               {/* Accent corner glow */}
               <div
                 className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-accent-violet/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
@@ -57,11 +57,13 @@ export default function Projects() {
               />
 
               {p.image ? (
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="mb-5 aspect-video w-full rounded-xl object-cover"
-                />
+                <div className="mb-5 overflow-hidden rounded-xl aspect-video w-full">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
               ) : (
                 <div
                   className="mb-5 grid aspect-video w-full place-items-center rounded-xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-accent-violet/10"

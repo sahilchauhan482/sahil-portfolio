@@ -128,10 +128,10 @@ export const projects = [
   {
     title: 'SKUVelocity',
     description:
-      'An enterprise purchase order management and tracking platform. Handles high-throughput imports, queues, background processing workers, and logistics control.',
-    tech: ['.NET / C#', 'Web APIs', 'Repository Pattern', 'SQL Server', 'Unit Testing'],
-    image: '',
-    live: '#',
+      'Contributed as a core full-stack developer to this enterprise purchase order management and tracking platform, optimizing high-throughput data imports, worker queues, and logistics workflows.',
+    tech: ['Angular', 'TypeScript', 'Tailwind CSS', '.NET Core', 'CQRS', 'SQL Server'],
+    image: '/skuvelocity.png',
+    live: 'https://skuvelocity.com/',
     github: '#',
     featured: true,
   },
