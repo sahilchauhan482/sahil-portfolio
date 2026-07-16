@@ -221,14 +221,14 @@ export default function CodeRainReveal({
         )}
 
         {/* Code block */}
-        <pre className="overflow-x-auto font-mono text-sm leading-relaxed">
+        <pre className="min-h-[220px] sm:min-h-[250px] overflow-x-auto font-mono text-sm leading-relaxed">
           <code>
             {displayedText.split('\n').map((line, i, arr) => {
               // Syntax highlighting: comments -> ink-faint, strings -> accent-cyan, keywords -> accent-violet
               const highlightedLine = line
                 .replace(/\/\/.*/g, (match) => `<span class="text-ink-faint italic">${match}</span>`)
                 .replace(/(['"`].*?['"`])/g, (match) => `<span class="text-accent-cyan">${match}</span>`)
-                .replace(/\b(const|let|var|function|return|if|else|for|async|await|public|private|class|new|import|from|export|default|console|typeof)\b/g, (match) => `<span class="text-accent-violet font-semibold">${match}</span>`);
+                .replace(/\b(const|let|var|function|return|if|else|for|async|await|public|private|class|new|import|from|export|default|console|typeof)\b(?!=)/g, (match) => `<span class="text-accent-violet font-semibold">${match}</span>`);
 
               const isLast = i === arr.length - 1;
 
