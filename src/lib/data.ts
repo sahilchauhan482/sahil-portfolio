@@ -191,7 +191,7 @@ export const projects = [
     description:
       'A premium 3D interactive portfolio featuring high-speed static page delivery, custom particle systems, collision detection, and performance tuning.',
     tech: ['Astro', 'React', 'React Three Fiber', 'Framer Motion', 'Tailwind'],
-    image: '',
+    image: '/portfolio.png',
     live: '#',
     github: '#',
     featured: false,
