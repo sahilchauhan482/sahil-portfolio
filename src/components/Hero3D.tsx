@@ -16,34 +16,7 @@ const MAX_SPARKLES = 800;
 const _up = new THREE.Vector3(0, 1, 0);
 const _dir = new THREE.Vector3(0, 1, 0);
 
-// A glowing meteor: molten head + additive halo + tapered fading tail.
-// The parent orients this group so local +Y points along the direction of travel.
-function Meteor({ headColor, tailColor }: { headColor: string; tailColor: string }) {
-  return (
-    <group>
-      {/* Rocky molten head */}
-      <mesh>
-        <icosahedronGeometry args={[0.075, 1]} />
-        <meshStandardMaterial color={headColor} emissive={headColor} emissiveIntensity={1.2} roughness={0.5} />
-      </mesh>
-      {/* Soft glow halo */}
-      <mesh>
-        <sphereGeometry args={[0.15, 16, 16]} />
-        <meshBasicMaterial color={headColor} transparent opacity={0.18} blending={THREE.AdditiveBlending} depthWrite={false} />
-      </mesh>
-      {/* Tapered blazing tail (points backward along -Y, i.e. opposite travel) */}
-      <mesh position={[0, -0.5, 0]}>
-        <coneGeometry args={[0.11, 1.0, 16, 1, true]} />
-        <meshBasicMaterial color={tailColor} transparent opacity={0.32} blending={THREE.AdditiveBlending} depthWrite={false} side={THREE.DoubleSide} />
-      </mesh>
-      {/* Inner brighter tail core */}
-      <mesh position={[0, -0.32, 0]}>
-        <coneGeometry args={[0.055, 0.64, 12, 1, true]} />
-        <meshBasicMaterial color="#ffffff" transparent opacity={0.28} blending={THREE.AdditiveBlending} depthWrite={false} side={THREE.DoubleSide} />
-      </mesh>
-    </group>
-  );
-}
+
 
 // Shared audio helper to trigger sound on crashes/clicks
 const triggerCollisionSound = () => {
@@ -1194,13 +1167,7 @@ function CleanSpaceScene() {
   const _pointerPlane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), []);
   const _intersect = useMemo(() => new THREE.Vector3(), []);
 
-  // Meteor refs
-  const m1Ref = useRef<THREE.Group>(null);
-  const m2Ref = useRef<THREE.Group>(null);
 
-  // Meteor trajectories
-  const meteor1 = useRef({ x: -8, y: 1.5, z: -1.5, vx: 0.05, vy: -0.012, vz: 0.012, active: true, delay: 0 });
-  const meteor2 = useRef({ x: 8, y: -1.5, z: -3.5, vx: -0.05, vy: 0.012, vz: 0.032, active: true, delay: 0 });
 
   // Sparkles buffer arrays for explosions
   const sparklesRef = useRef<{
@@ -1240,34 +1207,7 @@ function CleanSpaceScene() {
   ], []);
 
 
-  const calculateCollisionTrajectory = () => {
-    const m1 = meteor1.current;
-    const m2 = meteor2.current;
 
-    const cx = (Math.random() - 0.5) * 1.8;
-    const cy = (Math.random() - 0.5) * 1.2;
-    const cz = -2.0;
-
-    const N = 120; // steps
-
-    m1.x = -8;
-    m1.y = 1.0 + Math.random() * 2;
-    m1.z = -1 - Math.random() * 2;
-    m1.vx = (cx - m1.x) / N;
-    m1.vy = (cy - m1.y) / N;
-    m1.vz = (cz - m1.z) / N;
-    m1.active = true;
-    m1.delay = 0;
-
-    m2.x = 8;
-    m2.y = -1.0 - Math.random() * 2;
-    m2.z = -2 - Math.random() * 2;
-    m2.vx = (cx - m2.x) / N;
-    m2.vy = (cy - m2.y) / N;
-    m2.vz = (cz - m2.z) / N;
-    m2.active = true;
-    m2.delay = 0;
-  };
 
   const triggerExplosion = (x: number, y: number, z: number, customColor?: string, playAudio = true) => {
     const s = sparklesRef.current;
@@ -1330,59 +1270,7 @@ function CleanSpaceScene() {
       systemGroupRef.current.rotation.y = THREE.MathUtils.lerp(systemGroupRef.current.rotation.y, -0.15 + state.pointer.x * 0.15, 0.05);
     }
 
-    // Meteor Flight & Collision Logic
-    const m1 = meteor1.current;
-    const m2 = meteor2.current;
 
-    // Orient a meteor group so its local +Y (tail base → head) points along travel.
-    const alignToVelocity = (grp: THREE.Group, vx: number, vy: number, vz: number) => {
-      const len = Math.hypot(vx, vy, vz) || 1;
-      _up.set(0, 1, 0);
-      _dir.set(vx / len, vy / len, vz / len);
-      grp.quaternion.setFromUnitVectors(_up, _dir);
-    };
-
-    if (m1.active) {
-      m1.x += m1.vx; m1.y += m1.vy; m1.z += m1.vz;
-      if (m1Ref.current) {
-        m1Ref.current.position.set(m1.x, m1.y, m1.z);
-        alignToVelocity(m1Ref.current, m1.vx, m1.vy, m1.vz);
-        m1Ref.current.visible = true;
-      }
-    } else {
-      if (m1Ref.current) m1Ref.current.visible = false;
-    }
-
-    if (m2.active) {
-      m2.x += m2.vx; m2.y += m2.vy; m2.z += m2.vz;
-      if (m2Ref.current) {
-        m2Ref.current.position.set(m2.x, m2.y, m2.z);
-        alignToVelocity(m2Ref.current, m2.vx, m2.vy, m2.vz);
-        m2Ref.current.visible = true;
-      }
-    } else {
-      if (m2Ref.current) m2Ref.current.visible = false;
-    }
-
-    if (m1.active && m2.active) {
-      const dx = m1.x - m2.x;
-      const dy = m1.y - m2.y;
-      const dz = m1.z - m2.z;
-      const dist = Math.sqrt(dx*dx + dy*dy + dz*dz);
-
-      if (dist < 0.35) {
-        triggerExplosion((m1.x + m2.x) / 2, (m1.y + m2.y) / 2, (m1.z + m2.z) / 2, undefined, false);
-        m1.active = false;
-        m2.active = false;
-        m1.delay = 0;
-        m2.delay = 0;
-      }
-    } else {
-      m1.delay += 1;
-      if (m1.delay > 140) {
-        calculateCollisionTrajectory();
-      }
-    }
 
     // Update Sparkles
     const s = sparklesRef.current;
@@ -1445,13 +1333,7 @@ function CleanSpaceScene() {
         <PlanetMesh key={p.name} planet={p} />
       ))}
 
-      {/* 4. Flying Meteors/Asteroids (Ulka Pind) — glowing heads + fiery tails */}
-      <group ref={m1Ref}>
-        <Meteor headColor={three.color || '#ff9d5c'} tailColor={three.color || '#ff5c7f'} />
-      </group>
-      <group ref={m2Ref}>
-        <Meteor headColor={three.emissive || '#8fd3ff'} tailColor={three.emissive || '#00e5ff'} />
-      </group>
+
 
       {/* 5. Interactive Flying Droids */}
       <FlyingDroid id={1} color="#39ff14" onExplode={triggerExplosion} pose="dancing" mouseWorld={mouseWorld} onUpdatePosition={(x, y, z, active) => updateDroidPosition(1, x, y, z, active)} />
