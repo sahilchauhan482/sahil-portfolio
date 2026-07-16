@@ -156,12 +156,12 @@ export const projects = [
     featured: false,
   },
   {
-    title: 'Voucher Management App',
+    title: 'Voucher Entry System',
     description:
-      'A platform for generating, validating, and managing secure transaction vouchers, featuring ClosedXML data reports and a React dashboard.',
-    tech: ['.NET', 'React', 'Vite', 'TypeScript', 'Axios', 'ClosedXML', 'SQL Server'],
-    image: '',
-    live: '#',
+      'An accounting helper system with a clean architecture C# backend and a React/TypeScript admin console dashboard.',
+    tech: ['.NET / C#', 'Web APIs', 'Repository Pattern', 'SQL Server', 'Unit Testing'],
+    image: '/voucher.png',
+    live: 'http://74.208.229.140:8086/login',
     github: '#',
     featured: false,
   },
