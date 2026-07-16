@@ -181,7 +181,7 @@ export const projects = [
       'A dynamic survey builder and responder portal. Supports complex forms, Redux State, webcam verification, and custom Express MongoDB APIs.',
     tech: ['React', 'Redux Toolkit', 'Material UI (MUI)', 'Node.js', 'Express', 'MongoDB'],
     image: '/survey.png',
-    live: '#',
+    live: 'https://www.nagarsurvey.com/',
     github: '#',
     featured: false,
   },
