@@ -146,6 +146,16 @@ export const projects = [
     featured: true,
   },
   {
+    title: 'Reelyx Web Portal',
+    description:
+      'An AI content automation workspace and operations dashboard, featuring pipeline builders, AI model orchestration, automated schedulers, and post publishing workflows.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'AI Orchestration', 'Node.js'],
+    image: '/reelyx.png',
+    live: 'https://reelyx.vercel.app/',
+    github: '#',
+    featured: false,
+  },
+  {
     title: 'Lakhdata Computer Care (LCC)',
     description:
       'A modern IT services and hardware repair portal featuring static page delivery, rich interactive animations, and a structured service booking system.',
@@ -175,16 +185,7 @@ export const projects = [
     github: '#',
     featured: false,
   },
-  {
-    title: 'Reelyx Web Portal',
-    description:
-      'A next-generation media sharing and content streaming frontend, utilizing React 19, React Query for efficient data fetching, and Sentry for error tracking.',
-    tech: ['React 19', 'TanStack Query', 'Vite', 'TypeScript', 'Sentry', 'React Router'],
-    image: '',
-    live: '#',
-    github: '#',
-    featured: false,
-  },
+
   {
     title: 'This Interactive 3D Portfolio',
     description:
