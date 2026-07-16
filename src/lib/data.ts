@@ -118,7 +118,7 @@ export const projects = [
     description:
       'A premium real estate portal featuring high-performance property showcases, smooth scrolling layouts, and structured headless content management.',
     tech: ['Astro', 'Tailwind CSS v4', 'GSAP', 'Lenis', 'Sanity CMS'],
-    image: '',
+    image: '/daksh.png',
     live: 'https://dakshproperties.co.in/',
     github: '#',
     featured: true,
@@ -138,7 +138,7 @@ export const projects = [
     description:
       'An enterprise business operations engine with a clean architecture C# backend, a React admin console dashboard, and a Flutter cross-platform mobile client.',
     tech: ['.NET', 'React', 'Flutter', 'SQL Server', 'JWT Authentication'],
-    image: '',
+    image: '/estyro.png',
     live: 'https://estyro.com/',
     github: '#',
     featured: true,
@@ -148,7 +148,7 @@ export const projects = [
     description:
       'A modern IT services and hardware repair portal featuring static page delivery, rich interactive animations, and a structured service booking system.',
     tech: ['Astro', 'React', 'GSAP', 'Lenis', 'Sanity CMS', 'TypeScript'],
-    image: '',
+    image: '/lakhdata.png',
     live: 'https://lakhdatacomputercare.com/',
     github: '#',
     featured: false,
