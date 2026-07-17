@@ -27,6 +27,7 @@ export const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/sahil_chauhan_1995/', handle: '@sahil_chauhan_1995' },
   { label: 'Facebook', href: 'https://www.facebook.com/sahil.rana.77770194/about', handle: '@sahil.rana.77770194' },
   { label: 'WhatsApp', href: 'https://wa.me/918708634845', handle: '+918708634845' },
+  { label: 'Snapchat', href: 'https://www.snapchat.com/@sahil_snap2203', handle: '@sahil_snap2203' },
 ];
 
 // Hero ke neeche chalne wale stats (badal sakte ho)
