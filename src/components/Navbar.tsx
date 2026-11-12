@@ -63,7 +63,7 @@ export default function Navbar() {
       <nav
         aria-label="Main navigation"
         className={navStyles.nav}
-        style={designId !== 'cyberpunk' && scrolled ? { maxWidth: '960px' } : undefined}
+        style={designId !== 'cyberpunk' && scrolled ? { maxWidth: '1200px' } : undefined}
       >
         <a href="#top" className={navStyles.logo} onClick={playClick}>
           {designId === 'cyberpunk' ? (
