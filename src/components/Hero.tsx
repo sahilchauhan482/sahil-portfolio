@@ -39,6 +39,17 @@ export default function Hero() {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return (
+      <section className="relative flex min-h-screen items-center justify-center py-20">
+        <div className="text-center">
+          <h1 className="font-display text-5xl font-bold tracking-tight text-ink">{site.name}</h1>
+          <p className="mt-4 text-xl text-ink-muted">{site.role}</p>
+        </div>
+      </section>
+    );
+  }
+
   // Helper to split a string into letters for staggered entry
   const renderStaggeredText = (text: string, isGradient: boolean = false) => {
     return (
@@ -70,7 +81,7 @@ export default function Hero() {
     >
       {/* 3D layer */}
       <div className="absolute inset-0 opacity-90" aria-hidden="true">
-        {mounted && !reduce && <Hero3D />}
+        {!reduce && <Hero3D />}
       </div>
 
       {/* Readability gradient over the 3D */}
@@ -97,19 +108,9 @@ export default function Hero() {
           id="hero-heading"
           className="font-display text-[clamp(2.75rem,9vw,7rem)] font-bold leading-[0.95] tracking-tight"
         >
-          {mounted ? (
-            <>
-              {renderStaggeredText(site.name.split(' ')[0], false)}
-              <br />
-              {renderStaggeredText(site.name.split(' ').slice(1).join(' '), true)}
-            </>
-          ) : (
-            <>
-              <span className="inline-block">{site.name.split(' ')[0]}</span>
-              <br />
-              <span className="inline-block text-gradient">{site.name.split(' ').slice(1).join(' ')}</span>
-            </>
-          )}
+          {renderStaggeredText(site.name.split(' ')[0], false)}
+          <br />
+          {renderStaggeredText(site.name.split(' ').slice(1).join(' '), true)}
         </h1>
 
         <motion.p

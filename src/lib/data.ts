@@ -17,7 +17,7 @@ export const site = {
   phone: '+91 8708634845',
   // Photo: apni photo ko  public/profile.jpg  naam se daal do — bas!
   // File milte hi apne aap dikhne lagegi. Na mile toh placeholder chalega.
-  photo: '/profile.webp',
+  photo: '/profile.jpg',
   resumeUrl: '/resume.pdf', // apna resume /public/resume.pdf me daalo
 };
 

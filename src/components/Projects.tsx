@@ -60,8 +60,6 @@ export default function Projects() {
                   <img
                     src={p.image}
                     alt={`${p.title} — ${p.tech.join(', ')} project by Sahil Chauhan`}
-                    width={640}
-                    height={360}
                     loading="lazy"
                     decoding="async"
                     className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"

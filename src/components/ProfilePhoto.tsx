@@ -16,11 +16,9 @@ export default function ProfilePhoto() {
     <img
       src={src}
       alt={alt}
-      width={400}
-      height={500}
       loading="lazy"
       decoding="async"
-      onError={() => setSrc('/profile.jpg')}
+      onError={() => setSrc('/profile.svg')}
       className="h-full w-full object-cover"
     />
   );
