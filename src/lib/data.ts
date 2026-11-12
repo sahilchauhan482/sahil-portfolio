@@ -42,7 +42,7 @@ export const about = {
   heading: 'From logistics floors to production code.',
   // Ye summary resume se banayi hai — freely edit karo
   body: [
-    'I am a Full-Stack Developer at Business WebSoft Pvt Ltd, where I build robust web solutions using Angular, .NET and CQRS architecture.',
+    'I am Sahil Chauhan, a Full-Stack Developer and the creator behind SahilTech. Currently engineering enterprise software at Business WebSoft Pvt Ltd, I build robust, scalable web solutions using Angular, .NET Core, and CQRS architecture.',
     'My path is a little different: before writing code full-time, I spent nearly 6 years as a Last-Mile Operations Team Lead at Delhivery, managing complex workflows and large cross-functional teams. That operational discipline now shapes how I ship software — reliable, well-structured, and built to scale.',
     'I trained in .NET at CS Soft Solutions and Softwiz Infotech before moving into full-stack development. I care about clean architecture, thoughtful UX, and code that holds up under real-world load.',
   ],

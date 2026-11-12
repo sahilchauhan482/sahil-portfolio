@@ -53,7 +53,7 @@ const siteDescription = "Sahil Chauhan (SahilTech) is a Full-Stack Developer spe
 
     {/* Primary SEO Meta Tags */}
     <meta name="description" content={siteDescription} />
-    <meta name="keywords" content="Sahil Chauhan, SahilTech, Sahil Tech, Full-Stack Developer, .NET Developer, Angular Developer, React Developer, C# Developer, Software Engineer, Portfolio, Mohali Developer, Chandigarh Developer, CQRS Architecture, Microservices, sahilchauhan-coder, sahiltech.in" />
+    <meta name="keywords" content="sahil, sahil chauhan, sahilchauhan, sahiltech, sahil tech, sahil full stack developer, sahil developer mohali, sahiltech.in, Full-Stack Developer, .NET Developer, Angular Developer, React Developer, C# Developer, Software Engineer, Portfolio, Mohali Developer, Chandigarh Developer, CQRS Architecture, Microservices, sahilchauhan-coder" />
     <meta name="author" content={`${site.name} (${site.brand || 'SahilTech'})`} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href={site.url} />
@@ -112,8 +112,18 @@ const siteDescription = "Sahil Chauhan (SahilTech) is a Full-Stack Developer spe
           "@type": "Person",
           "@id": `${site.url}/#person`,
           "name": site.name,
-          "alternateName": ["SahilTech", "Sahil Tech", "sahilchauhan-coder"],
+          "alternateName": [
+            "Sahil",
+            "Sahil Chauhan",
+            "sahilchauhan",
+            "SahilTech",
+            "Sahil Tech",
+            "sahiltech.in",
+            "Sahil Full Stack Developer",
+            "sahilchauhan-coder"
+          ],
           "jobTitle": site.role,
+          "disambiguatingDescription": "Sahil Chauhan is a Full-Stack Developer specializing in Angular, .NET Core, React, and creator of SahilTech based in Mohali, Punjab, India.",
           "url": site.url,
           "image": `${site.url}/profile.jpg`,
           "sameAs": [
