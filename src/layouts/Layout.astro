@@ -1,7 +1,7 @@
 ---
 import { generateThemeCss, defaultDesignId, defaultPaletteId, getDesign, getPalette, designs, palettes } from '../lib/themes';
 import { DESIGN_STORAGE_KEY, PALETTE_STORAGE_KEY } from '../components/ThemeProvider';
-import { site } from '../lib/data';
+import { site, projects } from '../lib/data';
 import '../styles/globals.css';
 
 const defDesign = getDesign(defaultDesignId);
@@ -32,7 +32,8 @@ const noFlashScript = `(function(){try{
 }catch(x){}})();`;
 
 const themeCss = generateThemeCss();
-const { title = "Sahil Chauhan — Full-Stack Developer" } = Astro.props;
+const { title = "Sahil Chauhan (SahilTech) | Full-Stack Developer (.NET, Angular, React)" } = Astro.props;
+const siteDescription = "Sahil Chauhan (SahilTech) is a Full-Stack Developer specializing in .NET Core, Angular, React, and scalable cloud architectures. View production projects, code, and live apps.";
 ---
 
 <!doctype html>
@@ -45,57 +46,133 @@ const { title = "Sahil Chauhan — Full-Stack Developer" } = Astro.props;
 >
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    {/* SEO Meta Tags */}
-    <meta name="description" content={`${site.name} — ${site.role}. ${site.tagline}`} />
-    <meta name="keywords" content="Sahil Chauhan, Full-Stack Developer, .NET Developer, Angular Developer, Software Engineer, Portfolio, Mohali Developer, Chandigarh Developer, sahilchauhan-coder" />
-    <meta name="author" content={site.name} />
-    <meta name="robots" content="index, follow" />
+    {/* Primary SEO Meta Tags */}
+    <meta name="description" content={siteDescription} />
+    <meta name="keywords" content="Sahil Chauhan, SahilTech, Sahil Tech, Full-Stack Developer, .NET Developer, Angular Developer, React Developer, C# Developer, Software Engineer, Portfolio, Mohali Developer, Chandigarh Developer, CQRS Architecture, Microservices, sahilchauhan-coder, sahiltech.in" />
+    <meta name="author" content={`${site.name} (${site.brand || 'SahilTech'})`} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href={site.url} />
+    <meta name="theme-color" content="#060210" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="SahilTech — Sahil Chauhan" />
     <meta property="og:url" content={site.url} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={`${site.name} — ${site.role}. ${site.tagline}`} />
+    <meta property="og:description" content={siteDescription} />
     <meta property="og:image" content={`${site.url}/profile.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sahil Chauhan (SahilTech) — Full-Stack Developer Portfolio" />
 
     {/* Twitter */}
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={site.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={`${site.name} — ${site.role}. ${site.tagline}`} />
-    <meta property="twitter:image" content={`${site.url}/profile.jpg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={site.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={`${site.url}/profile.jpg`} />
+    <meta name="twitter:creator" content="@sahilchauhan482" />
 
     {/* Google Site Verification (Search Console) */}
     <meta name="google-site-verification" content="CCon7bVpCb2ZsIAkbA7FnnKotO5tb-yvmJloTfpPx3s" />
 
-    {/* Structured Data (JSON-LD) */}
+    {/* Structured Data (JSON-LD Graph) */}
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": site.name,
-      "jobTitle": site.role,
-      "url": site.url,
-      "image": `${site.url}/profile.jpg`,
-      "sameAs": [
-        "https://www.linkedin.com/in/sahil-chauhan-2107a9169/",
-        "https://github.com/sahilchauhan482",
-        "https://www.instagram.com/sahil_chauhan_1995/",
-        "https://www.facebook.com/sahil.rana.77770194/about",
-        "https://wa.me/918708634845"
-      ],
-      "description": `${site.name} is a ${site.role}. ${site.tagline}`,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Mohali",
-        "addressRegion": "Punjab",
-        "addressCountry": "India"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${site.url}/#website`,
+          "url": site.url,
+          "name": "SahilTech — Sahil Chauhan Portfolio",
+          "alternateName": ["Sahil Tech", "SahilTech India"],
+          "description": siteDescription,
+          "publisher": { "@id": `${site.url}/#person` },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": `${site.url}/#webpage`,
+          "url": site.url,
+          "name": title,
+          "isPartOf": { "@id": `${site.url}/#website` },
+          "about": { "@id": `${site.url}/#person` },
+          "mainEntity": { "@id": `${site.url}/#person` },
+          "description": siteDescription
+        },
+        {
+          "@type": "Person",
+          "@id": `${site.url}/#person`,
+          "name": site.name,
+          "alternateName": ["SahilTech", "Sahil Tech", "sahilchauhan-coder"],
+          "jobTitle": site.role,
+          "url": site.url,
+          "image": `${site.url}/profile.jpg`,
+          "sameAs": [
+            "https://www.linkedin.com/in/sahil-chauhan-2107a9169/",
+            "https://github.com/sahilchauhan482",
+            "https://www.instagram.com/sahil_chauhan_1995/",
+            "https://www.facebook.com/sahil.rana.77770194/about",
+            "https://wa.me/918708634845"
+          ],
+          "knowsAbout": [
+            ".NET Core",
+            "C#",
+            "Angular",
+            "React",
+            "TypeScript",
+            "Astro",
+            "CQRS Architecture",
+            "SQL Server",
+            "Full-Stack Development",
+            "Tailwind CSS",
+            "REST APIs",
+            "Cloud Architecture"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Business WebSoft Pvt Ltd",
+            "url": "https://businesswebsoft.com/"
+          },
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Kurukshetra University"
+          },
+          "description": `${site.name} is a ${site.role}. ${site.tagline}`,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mohali",
+            "addressRegion": "Punjab",
+            "addressCountry": "India"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": `${site.url}/#projects`,
+          "name": "Featured Projects by Sahil Chauhan",
+          "itemListElement": projects.map((p, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": p.title,
+              "description": p.description,
+              "applicationCategory": "DeveloperApplication",
+              "operatingSystem": "Web",
+              "url": p.live !== '#' ? p.live : site.url,
+              "author": { "@id": `${site.url}/#person` }
+            }
+          }))
+        }
+      ]
     })} />
 
     {/* Load Google Fonts */}

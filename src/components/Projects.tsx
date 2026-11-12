@@ -59,7 +59,11 @@ export default function Projects() {
                 <div className="mb-5 overflow-hidden rounded-xl aspect-video w-full bg-[#0a0a0f] border border-white/5 flex items-center justify-center relative">
                   <img
                     src={p.image}
-                    alt={p.title}
+                    alt={`${p.title} — ${p.tech.join(', ')} project by Sahil Chauhan`}
+                    width={640}
+                    height={360}
+                    loading="lazy"
+                    decoding="async"
                     className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

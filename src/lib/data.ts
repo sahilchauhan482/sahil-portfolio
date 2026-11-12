@@ -8,6 +8,7 @@ export const site = {
   // Deploy hone ke baad apna final URL yahan daalna (SEO ke liye zaroori)
   url: 'https://sahiltech.in',
   name: 'Sahil Chauhan',
+  brand: 'SahilTech',
   role: 'Full-Stack Developer',
   // Hero me bade text ke neeche dikhne wali line
   tagline: 'I build robust, scalable web applications end-to-end.',
@@ -16,7 +17,7 @@ export const site = {
   phone: '+91 8708634845',
   // Photo: apni photo ko  public/profile.jpg  naam se daal do — bas!
   // File milte hi apne aap dikhne lagegi. Na mile toh placeholder chalega.
-  photo: '/profile.jpg',
+  photo: '/profile.webp',
   resumeUrl: '/resume.pdf', // apna resume /public/resume.pdf me daalo
 };
 
@@ -121,7 +122,7 @@ export const projects = [
     description:
       'A premium real estate portal featuring high-performance property showcases, smooth scrolling layouts, and structured headless content management.',
     tech: ['Astro', 'Tailwind CSS v4', 'GSAP', 'Lenis', 'Sanity CMS'],
-    image: '/daksh.png',
+    image: '/daksh.webp',
     live: 'https://dakshproperties.co.in/',
     github: '#',
     featured: true,
@@ -131,7 +132,7 @@ export const projects = [
     description:
       'Contributed as a core full-stack developer to this enterprise purchase order management and tracking platform, optimizing high-throughput data imports, worker queues, and logistics workflows.',
     tech: ['Angular', 'TypeScript', 'Tailwind CSS', '.NET Core', 'CQRS', 'SQL Server'],
-    image: '/skuvelocity.png',
+    image: '/skuvelocity.webp',
     live: 'https://skuvelocity.com/',
     github: '#',
     featured: true,
@@ -141,7 +142,7 @@ export const projects = [
     description:
       'An enterprise business operations engine with a clean architecture C# backend, a React admin console dashboard, and a Flutter cross-platform mobile client.',
     tech: ['.NET', 'React', 'Flutter', 'SQL Server', 'JWT Authentication'],
-    image: '/estyro.png',
+    image: '/estyro.webp',
     live: 'https://estyro.com/',
     github: '#',
     featured: true,
@@ -151,7 +152,7 @@ export const projects = [
     description:
       'An AI content automation workspace and operations dashboard, featuring pipeline builders, AI model orchestration, automated schedulers, and post publishing workflows.',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'AI Orchestration', 'Node.js'],
-    image: '/reelyx.png',
+    image: '/reelyx.webp',
     live: 'https://reelyx.vercel.app/',
     github: '#',
     featured: false,
@@ -161,7 +162,7 @@ export const projects = [
     description:
       'A modern IT services and hardware repair portal featuring static page delivery, rich interactive animations, and a structured service booking system.',
     tech: ['Astro', 'React', 'GSAP', 'Lenis', 'Sanity CMS', 'TypeScript'],
-    image: '/lakhdata.png',
+    image: '/lakhdata.webp',
     live: 'https://lakhdatacomputercare.com/',
     github: '#',
     featured: false,
@@ -171,7 +172,7 @@ export const projects = [
     description:
       'An accounting helper system with a clean architecture C# backend and a React/TypeScript admin console dashboard.',
     tech: ['.NET / C#', 'Web APIs', 'Repository Pattern', 'SQL Server', 'Unit Testing'],
-    image: '/voucher.png',
+    image: '/voucher.webp',
     live: 'http://74.208.229.140:8086/login',
     github: '#',
     featured: false,
@@ -181,7 +182,7 @@ export const projects = [
     description:
       'A dynamic survey builder and responder portal. Supports complex forms, Redux State, webcam verification, and custom Express MongoDB APIs.',
     tech: ['React', 'Redux Toolkit', 'Material UI (MUI)', 'Node.js', 'Express', 'MongoDB'],
-    image: '/survey.png',
+    image: '/survey.webp',
     live: 'https://www.nagarsurvey.com/',
     github: '#',
     featured: false,
@@ -192,7 +193,7 @@ export const projects = [
     description:
       'A premium 3D interactive portfolio featuring high-speed static page delivery, custom particle systems, collision detection, and performance tuning.',
     tech: ['Astro', 'React', 'React Three Fiber', 'Framer Motion', 'Tailwind'],
-    image: '/portfolio.png',
+    image: '/portfolio.webp',
     live: '#',
     github: '#',
     featured: false,

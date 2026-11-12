@@ -9,14 +9,18 @@ import { site } from '@/lib/data';
 // with onError fallback — simplest robust path for a swap-in photo.
 export default function ProfilePhoto() {
   const [src, setSrc] = useState(site.photo);
-  const alt = `${site.name}, ${site.role}`;
+  const alt = `${site.name} — ${site.role}`;
 
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt}
-      onError={() => setSrc('/profile.svg')}
+      width={400}
+      height={500}
+      loading="lazy"
+      decoding="async"
+      onError={() => setSrc('/profile.jpg')}
       className="h-full w-full object-cover"
     />
   );
